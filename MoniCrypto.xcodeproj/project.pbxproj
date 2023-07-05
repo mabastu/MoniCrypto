@@ -19,6 +19,9 @@
 		0A65F1D12A40E9A700CB2E11 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A65F1D02A40E9A700CB2E11 /* PreviewProvider.swift */; };
 		0AC15DD32A55950C003F2C57 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC15DD22A55950C003F2C57 /* SearchBarView.swift */; };
 		0AC15DD52A559CA2003F2C57 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC15DD42A559CA2003F2C57 /* UIApplication.swift */; };
+		0AC15DD72A562DE0003F2C57 /* Statistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC15DD62A562DE0003F2C57 /* Statistic.swift */; };
+		0AC15DD92A562F53003F2C57 /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC15DD82A562F53003F2C57 /* StatisticView.swift */; };
+		0AC15DDB2A563790003F2C57 /* HomeStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC15DDA2A563790003F2C57 /* HomeStatsView.swift */; };
 		0AEA1C5B2A405E4B0017060E /* MoniCryptoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEA1C5A2A405E4B0017060E /* MoniCryptoApp.swift */; };
 		0AEA1C5F2A405E4C0017060E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AEA1C5E2A405E4C0017060E /* Assets.xcassets */; };
 		0AEA1C632A405E4C0017060E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AEA1C622A405E4C0017060E /* Preview Assets.xcassets */; };
@@ -42,6 +45,9 @@
 		0A65F1D02A40E9A700CB2E11 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		0AC15DD22A55950C003F2C57 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		0AC15DD42A559CA2003F2C57 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		0AC15DD62A562DE0003F2C57 /* Statistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistic.swift; sourceTree = "<group>"; };
+		0AC15DD82A562F53003F2C57 /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
+		0AC15DDA2A563790003F2C57 /* HomeStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStatsView.swift; sourceTree = "<group>"; };
 		0AEA1C572A405E4B0017060E /* MoniCrypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoniCrypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AEA1C5A2A405E4B0017060E /* MoniCryptoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoniCryptoApp.swift; sourceTree = "<group>"; };
 		0AEA1C5E2A405E4C0017060E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -165,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				0AEA1C702A4065D00017060E /* HomeView.swift */,
+				0AC15DDA2A563790003F2C57 /* HomeStatsView.swift */,
 				0A65F1CE2A40E91500CB2E11 /* CoinRowView.swift */,
 			);
 			path = Views;
@@ -184,6 +191,7 @@
 				0A5848472A44FABA00EFAD6A /* CoinImage */,
 				0AEA1C732A4067760017060E /* CircleButton */,
 				0AC15DD22A55950C003F2C57 /* SearchBarView.swift */,
+				0AC15DD82A562F53003F2C57 /* StatisticView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -201,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				0AEA1C792A4094490017060E /* CoinModel.swift */,
+				0AC15DD62A562DE0003F2C57 /* Statistic.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -276,14 +285,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AC15DD52A559CA2003F2C57 /* UIApplication.swift in Sources */,
+				0AC15DD92A562F53003F2C57 /* StatisticView.swift in Sources */,
 				0A58484D2A4500A000EFAD6A /* CoinImageViewModel.swift in Sources */,
 				0A5848492A44FAF800EFAD6A /* CoinImageView.swift in Sources */,
 				0AEA1C772A406D080017060E /* CircleButtonAnimationView.swift in Sources */,
 				0AEA1C712A4065D00017060E /* HomeView.swift in Sources */,
+				0AC15DD72A562DE0003F2C57 /* Statistic.swift in Sources */,
 				0AEA1C5B2A405E4B0017060E /* MoniCryptoApp.swift in Sources */,
 				0A3711882A41D1DE006C7077 /* HomeViewModel.swift in Sources */,
 				0AEA1C752A4067890017060E /* CircleButtonView.swift in Sources */,
 				0A58484F2A4507CD00EFAD6A /* LocalFileManager.swift in Sources */,
+				0AC15DDB2A563790003F2C57 /* HomeStatsView.swift in Sources */,
 				0AEA1C7A2A4094490017060E /* CoinModel.swift in Sources */,
 				0A65F1D12A40E9A700CB2E11 /* PreviewProvider.swift in Sources */,
 				0A37118B2A42055C006C7077 /* CoinDataServices.swift in Sources */,

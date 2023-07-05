@@ -43,6 +43,9 @@ struct HomeView: View {
                 }
                 .padding(.horizontal)
                 
+                // Home Statistics View
+                HomeStatsView(showPortfolio: $showPortfolio)
+                
                 // Search Bar
                 SearchBarView(searchText: $vm.searchText)
                 

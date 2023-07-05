@@ -24,6 +24,9 @@ class DeveloperPreview {
     private init() { }
     
     let homeVM = HomeViewModel()
+    let stat1 = Statistic(title: "Market Cap", value: "$12.3Bn", percentageChange: 23.44)
+    let stat2 = Statistic(title: "Total Volume", value: "$1.03Tr")
+    let stat3 = Statistic(title: "Portfolio Value", value: "$60.32k", percentageChange: -14.32)
     
     let coin = Coin(
           id: "bitcoin",
