@@ -14,6 +14,7 @@
 		0A5848492A44FAF800EFAD6A /* CoinImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5848482A44FAF800EFAD6A /* CoinImageView.swift */; };
 		0A58484B2A44FDC700EFAD6A /* CoinImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A58484A2A44FDC700EFAD6A /* CoinImageService.swift */; };
 		0A58484D2A4500A000EFAD6A /* CoinImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A58484C2A4500A000EFAD6A /* CoinImageViewModel.swift */; };
+		0A58484F2A4507CD00EFAD6A /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A58484E2A4507CD00EFAD6A /* LocalFileManager.swift */; };
 		0A65F1CF2A40E91500CB2E11 /* CoinRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A65F1CE2A40E91500CB2E11 /* CoinRowView.swift */; };
 		0A65F1D12A40E9A700CB2E11 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A65F1D02A40E9A700CB2E11 /* PreviewProvider.swift */; };
 		0AEA1C5B2A405E4B0017060E /* MoniCryptoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEA1C5A2A405E4B0017060E /* MoniCryptoApp.swift */; };
@@ -34,6 +35,7 @@
 		0A5848482A44FAF800EFAD6A /* CoinImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageView.swift; sourceTree = "<group>"; };
 		0A58484A2A44FDC700EFAD6A /* CoinImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageService.swift; sourceTree = "<group>"; };
 		0A58484C2A4500A000EFAD6A /* CoinImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageViewModel.swift; sourceTree = "<group>"; };
+		0A58484E2A4507CD00EFAD6A /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 		0A65F1CE2A40E91500CB2E11 /* CoinRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRowView.swift; sourceTree = "<group>"; };
 		0A65F1D02A40E9A700CB2E11 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		0AEA1C572A405E4B0017060E /* MoniCrypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoniCrypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				0A5848452A43ACA200EFAD6A /* NetworkingManager.swift */,
+				0A58484E2A4507CD00EFAD6A /* LocalFileManager.swift */,
 			);
 			path = Utilites;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				0AEA1C5B2A405E4B0017060E /* MoniCryptoApp.swift in Sources */,
 				0A3711882A41D1DE006C7077 /* HomeViewModel.swift in Sources */,
 				0AEA1C752A4067890017060E /* CircleButtonView.swift in Sources */,
+				0A58484F2A4507CD00EFAD6A /* LocalFileManager.swift in Sources */,
 				0AEA1C7A2A4094490017060E /* CoinModel.swift in Sources */,
 				0A65F1D12A40E9A700CB2E11 /* PreviewProvider.swift in Sources */,
 				0A37118B2A42055C006C7077 /* CoinDataServices.swift in Sources */,
