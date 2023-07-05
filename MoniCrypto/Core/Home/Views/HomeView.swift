@@ -43,6 +43,9 @@ struct HomeView: View {
                 }
                 .padding(.horizontal)
                 
+                // Search Bar
+                SearchBarView(searchText: $vm.searchText)
+                
                 // Column Titles
                 HStack {
                     Text("Coins")
