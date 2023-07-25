@@ -1,5 +1,5 @@
 //
-//  CoinModel.swift
+//  Coin.swift
 //  MoniCrypto
 //
 //  Created by Mabast on 19/06/2023.
