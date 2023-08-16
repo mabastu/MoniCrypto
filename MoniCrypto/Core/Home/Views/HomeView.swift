@@ -68,6 +68,14 @@ struct HomeView: View {
                     }
                     Text("Price")
                         .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
+                    Button {
+                        withAnimation(.linear(duration: 2.0)) {
+                            vm.reloadData()
+                        }
+                    } label: {
+                        Image(systemName: "goforward")
+                    }
+
                 }
                 .padding(.horizontal)
                 .font(.caption)
@@ -81,6 +89,9 @@ struct HomeView: View {
                             CoinRowView(coin: coin, showHoldingsColumn: false)
                                 .listRowInsets(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 10))
                         }
+                    }
+                    .refreshable {
+                        vm.reloadData()
                     }
                     .listStyle(PlainListStyle())
                     .transition(.move(edge: .leading))

@@ -22,11 +22,10 @@ struct PortfolioView: View {
     }
     
     private func saveButtonPressed() {
+
+        // Save to Portfolio
         guard let coin = selectedCoin, let amount = Double(quantity) else { return }
         vm.updatePortfolio(coin: coin, amount: amount)
-        
-        // Save to Portfolio
-        
         
         // Show Chcckmark
         withAnimation(.easeIn) {
