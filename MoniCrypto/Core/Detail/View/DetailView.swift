@@ -34,39 +34,50 @@ struct DetailView: View {
      
     var body: some View {
         ScrollView {
-            VStack(spacing: 20) {
-                Text("")
-                    .frame(height: 150)
-                
-                Text("Overview")
-                    .font(.title)
-                    .bold()
-                    .foregroundColor(Color.theme.accent)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                Divider()
-                
-                LazyVGrid(columns: columns, alignment: .leading, spacing: 30) {
-                    ForEach(vm.overviewStatistics) { stat in
-                        StatisticView(stat: stat)
-                    }
+            VStack {
+                ChartView(coin: vm.coin)
+                VStack(spacing: 20) {
+                    Text("Overview")
+                        .font(.title)
+                        .bold()
+                        .foregroundColor(Color.theme.accent)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    Divider()
+                    
+                    LazyVGrid(columns: columns, alignment: .leading, spacing: 30, pinnedViews: [], content: {
+                        ForEach(vm.overviewStatistics) { stat in
+                            StatisticView(stat: stat)
+                        }
+                    })
+                    
+                    Text("Additional Details")
+                        .font(.title)
+                        .bold()
+                        .foregroundColor(Color.theme.accent)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    Divider()
+                    
+                    LazyVGrid(columns: columns, alignment: .leading, spacing: 30, pinnedViews: [], content: {
+                        ForEach(vm.additionalStatistics) { stat in
+                            StatisticView(stat: stat)
+                        }
+                    })
                 }
-                
-                Text("Additional Details")
-                    .font(.title)
-                    .bold()
-                    .foregroundColor(Color.theme.accent)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                Divider()
-                
-                LazyVGrid(columns: columns, alignment: .leading, spacing: 30) {
-                    ForEach(vm.additionalStatistics) { stat in
-                        StatisticView(stat: stat)
-                    }
-                }
+                .padding()
             }
-            .padding()
         }
         .navigationTitle(vm.coin.name)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                HStack {
+                    Text(vm.coin.symbol.uppercased())
+                        .font(.headline)
+                    .foregroundColor(Color.theme.accent)
+                    CoinImageView(coin: vm.coin)
+                        .frame(width: 25, height: 25)
+                }
+            }
+        }
     }
 }
 

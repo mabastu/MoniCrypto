@@ -14,7 +14,7 @@ import Foundation
  */
 
 struct GlobalData: Codable {
-    let data: MarketData
+    let data: MarketData?
 }
 
 struct MarketData: Codable {

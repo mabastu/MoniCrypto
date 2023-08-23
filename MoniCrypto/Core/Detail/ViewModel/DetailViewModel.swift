@@ -12,6 +12,9 @@ class DetailViewModel: ObservableObject {
     
     @Published var overviewStatistics: [Statistic] = []
     @Published var additionalStatistics: [Statistic] = []
+    @Published var coinDescription: String? = nil
+    @Published var websiteURL: String? = nil
+    @Published var redditURL: String? = nil
     
     @Published var coin: Coin
     private let coinDetailService: CoinDetailDataService
@@ -24,19 +27,23 @@ class DetailViewModel: ObservableObject {
     }
     
     private func addSubscribers() {
+        
         coinDetailService.$coinDetails
             .combineLatest($coin)
             .map(mapDataToStatistics)
-            .sink { [weak self] returnedArray in
-                self?.overviewStatistics = returnedArray.overview
-                self?.additionalStatistics = returnedArray.additional
-        }.store(in: &cancellables)
+            .sink { [weak self] (returnedArrays) in
+                self?.overviewStatistics = returnedArrays.overview
+                self?.additionalStatistics = returnedArrays.additional
+            }
+            .store(in: &cancellables)
+        
     }
     
-    private func mapDataToStatistics(coinDetail: CoinDetail?, coin: Coin) -> (overview: [Statistic], additional: [Statistic]) {
+    
+    private func mapDataToStatistics(coinDetailModel: CoinDetail?, coin: Coin) -> (overview: [Statistic], additional: [Statistic]) {
         let overviewArray = createOverviewArray(coin: coin)
-        let additionalArray = createAdditionalArray(coinDetail: coinDetail, coin: coin)
-        return (overviewArray,additionalArray)
+        let additionalArray = createAdditionalArray(coinDetail: coinDetailModel, coin: coin)
+        return (overviewArray, additionalArray)
     }
     
     private func createOverviewArray(coin: Coin) -> [Statistic] {
@@ -45,8 +52,8 @@ class DetailViewModel: ObservableObject {
         let priceStat = Statistic(title: "Current Price", value: price, percentageChange: pricePercentChange)
         
         let marketCap = "$" + (coin.marketCap?.formattedWithAbbreviations() ?? "")
-        let marketCapChange = coin.marketCapChangePercentage24H
-        let marketCapStat = Statistic(title: "Market Capitalization", value: marketCap, percentageChange: marketCapChange)
+        let marketCapPercentChange = coin.marketCapChangePercentage24H
+        let marketCapStat = Statistic(title: "Market Capitalization", value: marketCap, percentageChange: marketCapPercentChange)
         
         let rank = "\(coin.rank)"
         let rankStat = Statistic(title: "Rank", value: rank)
@@ -61,30 +68,30 @@ class DetailViewModel: ObservableObject {
     }
     
     private func createAdditionalArray(coinDetail: CoinDetail?, coin: Coin) -> [Statistic] {
-        // Additional
-        let high24H = coin.high24H?.asCurrencyWith6Decimals() ?? "N/A"
-        let highStat = Statistic(title: "24h High", value: high24H)
         
-        let low24H = coin.low24H?.asCurrencyWith6Decimals() ?? "N/A"
-        let lowStat = Statistic(title: "24h Low", value: low24H)
+        let high = coin.high24H?.asCurrencyWith6Decimals() ?? "n/a"
+        let highStat = Statistic(title: "24h High", value: high)
         
-        let priceChangePercentage24H = coin.priceChange24H?.asCurrencyWith6Decimals() ?? "N/A"
+        let low = coin.low24H?.asCurrencyWith6Decimals() ?? "n/a"
+        let lowStat = Statistic(title: "24h Low", value: low)
+        
+        let priceChange = coin.priceChange24H?.asCurrencyWith6Decimals() ?? "n/a"
         let pricePercentChange = coin.priceChangePercentage24H
-        let priceChangeStat = Statistic(title: "24h Price Change", value: priceChangePercentage24H, percentageChange: pricePercentChange)
+        let priceChangeStat = Statistic(title: "24h Price Change", value: priceChange, percentageChange: pricePercentChange)
         
-        let marketCapChange24H = "$" + (coin.marketCapChange24H?.formattedWithAbbreviations() ?? "")
-        let marketCapChangePercentage24H = coin.marketCapChangePercentage24H
-        let marketCapChangeStat = Statistic(title: "24h Market Cap Change", value: marketCapChange24H, percentageChange: marketCapChangePercentage24H)
+        let marketCapChange = "$" + (coin.marketCapChange24H?.formattedWithAbbreviations() ?? "")
+        let marketCapPercentChange = coin.marketCapChangePercentage24H
+        let marketCapChangeStat = Statistic(title: "24h Market Cap Change", value: marketCapChange, percentageChange: marketCapPercentChange)
         
         let blockTime = coinDetail?.blockTimeInMinutes ?? 0
-        let blockTimeString = blockTime == 0 ? "N/A" : "\(blockTime)"
-        let blockTimeStat = Statistic(title: "Block Time", value: blockTimeString)
+        let blockTimeString = blockTime == 0 ? "n/a" : "\(blockTime)"
+        let blockStat = Statistic(title: "Block Time", value: blockTimeString)
         
-        let hashing = coinDetail?.hashingAlgorithm ?? "N/A"
+        let hashing = coinDetail?.hashingAlgorithm ?? "n/a"
         let hashingStat = Statistic(title: "Hashing Algorithm", value: hashing)
         
         let additionalArray: [Statistic] = [
-            highStat, lowStat, priceChangeStat, priceChangeStat, marketCapChangeStat, blockTimeStat, hashingStat
+            highStat, lowStat, priceChangeStat, marketCapChangeStat, blockStat, hashingStat
         ]
         return additionalArray
     }
