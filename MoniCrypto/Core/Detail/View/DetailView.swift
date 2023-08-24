@@ -23,6 +23,7 @@ struct DetailLoadingView: View {
 struct DetailView: View {
     
     @StateObject private var vm: DetailViewModel
+    @State private var showFullDescription: Bool = false
     private let columns: [GridItem] = [
         GridItem(.flexible()),
         GridItem(.flexible()),
@@ -44,6 +45,28 @@ struct DetailView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                     Divider()
                     
+                    ZStack {
+                        if let coinDescription = vm.coinDescription, !coinDescription.isEmpty {
+                            VStack(alignment: .leading) {
+                                Text(coinDescription)
+                                    .lineLimit(showFullDescription ? nil : 3)
+                                    .font(.callout)
+                                    .foregroundColor(Color.theme.secondaryText)
+                                Button(action: {
+                                    withAnimation(.easeInOut) {
+                                        showFullDescription.toggle()
+                                    }
+                                }, label: {
+                                    Text(showFullDescription ? "Less" : "Read More..")
+                                        .font(.caption)
+                                        .fontWeight(.bold)
+                                        .padding(.vertical, 2)
+                                })
+                                .accentColor(.blue)
+                            }
+                        }
+                    }
+                    
                     LazyVGrid(columns: columns, alignment: .leading, spacing: 30, pinnedViews: [], content: {
                         ForEach(vm.overviewStatistics) { stat in
                             StatisticView(stat: stat)
@@ -62,6 +85,17 @@ struct DetailView: View {
                             StatisticView(stat: stat)
                         }
                     })
+                    VStack(alignment: .leading, spacing: 20) {
+                        if let websiteURLString = vm.websiteURL, let url = URL(string: websiteURLString) {
+                            Link("Website", destination: url)
+                        }
+                        if let redditURLString = vm.redditURL, let url = URL(string: redditURLString) {
+                            Link("Reddit", destination: url)
+                        }
+                    }
+                    .accentColor(.blue)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .font(.headline)
                 }
                 .padding()
             }

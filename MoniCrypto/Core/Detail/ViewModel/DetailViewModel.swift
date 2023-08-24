@@ -34,8 +34,14 @@ class DetailViewModel: ObservableObject {
             .sink { [weak self] (returnedArrays) in
                 self?.overviewStatistics = returnedArrays.overview
                 self?.additionalStatistics = returnedArrays.additional
-            }
-            .store(in: &cancellables)
+            }.store(in: &cancellables)
+        
+        coinDetailService.$coinDetails
+            .sink { [weak self] returnedCoins in
+                self?.coinDescription = returnedCoins?.readableDescription
+                self?.websiteURL = returnedCoins?.links?.homepage?.first
+                self?.redditURL = returnedCoins?.links?.subredditURL
+            }.store(in: &cancellables)
         
     }
     
