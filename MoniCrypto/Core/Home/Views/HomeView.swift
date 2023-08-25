@@ -135,16 +135,27 @@ struct HomeView: View {
                     .transition(.move(edge: .leading))
                 } else {
                     // Portfolio Coins ListView
-                    List {
-                        ForEach(vm.portfolioCoins) { coin in
-                            CoinRowView(coin: coin, showHoldingsColumn: true)
-                                .listRowInsets(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 10))
-                                .onTapGesture {
-                                    segue(coin:coin)
+                    ZStack(alignment: .top) {
+                        if vm.portfolioCoins.isEmpty && vm.searchText.isEmpty {
+                            Text("You haven't added any coins to your portfolio yet! Click to the + button to get Started! 🧐")
+                                .font(.callout)
+                                .foregroundColor(Color.theme.accent)
+                                .fontWeight(.medium)
+                                .multilineTextAlignment(.center)
+                                .padding(50)
+                        } else {
+                            List {
+                                ForEach(vm.portfolioCoins) { coin in
+                                    CoinRowView(coin: coin, showHoldingsColumn: true)
+                                        .listRowInsets(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 10))
+                                        .onTapGesture {
+                                            segue(coin:coin)
+                                        }
                                 }
+                            }
+                            .listStyle(PlainListStyle())
                         }
                     }
-                    .listStyle(PlainListStyle())
                     .transition(.move(edge: .trailing))
                 }
                 Spacer(minLength: 0)
