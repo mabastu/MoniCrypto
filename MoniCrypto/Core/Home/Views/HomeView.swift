@@ -126,6 +126,7 @@ struct HomeView: View {
                                 .onTapGesture {
                                     segue(coin:coin)
                                 }
+                                .listRowBackground(Color.theme.background)
                         }
                     }
                     .refreshable {
@@ -151,6 +152,7 @@ struct HomeView: View {
                                         .onTapGesture {
                                             segue(coin:coin)
                                         }
+                                        .listRowBackground(Color.theme.background)
                                 }
                             }
                             .listStyle(PlainListStyle())
