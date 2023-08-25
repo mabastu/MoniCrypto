@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0A155B442A7E8DC600173B36 /* XMarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A155B432A7E8DC600173B36 /* XMarkButton.swift */; };
+		0A19D0FD2A980CC20052483E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A19D0FC2A980CC20052483E /* LaunchScreen.storyboard */; };
+		0A19D0FF2A989D270052483E /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A19D0FE2A989D270052483E /* LaunchView.swift */; };
 		0A3711862A4140FF006C7077 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3711852A4140FF006C7077 /* Double.swift */; };
 		0A3711882A41D1DE006C7077 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3711872A41D1DE006C7077 /* HomeViewModel.swift */; };
 		0A37118B2A42055C006C7077 /* CoinDataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A37118A2A42055C006C7077 /* CoinDataServices.swift */; };
@@ -50,6 +52,8 @@
 
 /* Begin PBXFileReference section */
 		0A155B432A7E8DC600173B36 /* XMarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMarkButton.swift; sourceTree = "<group>"; };
+		0A19D0FC2A980CC20052483E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0A19D0FE2A989D270052483E /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		0A3711852A4140FF006C7077 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		0A3711872A41D1DE006C7077 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		0A37118A2A42055C006C7077 /* CoinDataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataServices.swift; sourceTree = "<group>"; };
@@ -103,6 +107,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A19D0F82A980C700052483E /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				0A19D0F92A980C8C0052483E /* Views */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		0A19D0F92A980C8C0052483E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0A19D0FC2A980CC20052483E /* LaunchScreen.storyboard */,
+				0A19D0FE2A989D270052483E /* LaunchView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		0A3711892A420492006C7077 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				0AEA1C722A40675F0017060E /* Components */,
+				0A19D0F82A980C700052483E /* Launch */,
 				0AEA1C6D2A4065A00017060E /* Home */,
 				0A64D8922A90032300064FE8 /* Detail */,
 				0ADBB5AA2A97819D00869272 /* Settings */,
@@ -360,6 +382,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A19D0FD2A980CC20052483E /* LaunchScreen.storyboard in Resources */,
 				0AEA1C632A405E4C0017060E /* Preview Assets.xcassets in Resources */,
 				0AEA1C5F2A405E4C0017060E /* Assets.xcassets in Resources */,
 			);
@@ -379,6 +402,7 @@
 				0A58484D2A4500A000EFAD6A /* CoinImageViewModel.swift in Sources */,
 				0A6789792A8BA15200635ACE /* PortfolioContainer.xcdatamodeld in Sources */,
 				0ADBB5AD2A9781E900869272 /* SettingsView.swift in Sources */,
+				0A19D0FF2A989D270052483E /* LaunchView.swift in Sources */,
 				0A5848492A44FAF800EFAD6A /* CoinImageView.swift in Sources */,
 				0AEA1C772A406D080017060E /* CircleButtonAnimationView.swift in Sources */,
 				0AEA1C712A4065D00017060E /* HomeView.swift in Sources */,
@@ -544,6 +568,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -582,6 +607,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
