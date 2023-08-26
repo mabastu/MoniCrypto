@@ -71,7 +71,7 @@ struct SettingsView: View {
                                 .foregroundColor(Color.theme.accent)
                         }
                         .padding(.vertical)
-                        Link(destination: coinGeckoURL, label: { Text("Visit my Github profile 🤖") })
+                        Link(destination: personalURL, label: { Text("Visit my Github profile 🤖") })
                     } header: {
                         Text("Developer")
                     }
